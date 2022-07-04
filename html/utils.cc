@@ -525,7 +525,7 @@ namespace htmlcxx {
 				uri = rel.absolute(root);
 				uri.path(normalize_slashs(uri.path()));
 			}
-			catch (Uri::Exception)
+			catch (Uri::Exception &e)
 			{
 				return string();
 			}

@@ -16,7 +16,7 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with htmlcxx.  If not, see <http://www.gnu.org/licenses/>.
  * 
- * Copyright 2005-2010 Davi de Castro Reis and Robson Braga Araœjo
+ * Copyright 2005-2010 Davi de Castro Reis and Robson Braga Araï¿½jo
  * Copyright 2011 David Hoerl
  * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
 
@@ -50,6 +50,9 @@ void usage(const char *prg)
 {
 	cerr << "usage: " <<  prg << " [-d maxdepth] uri1 [uri2 ...]"  << endl;
 }
+
+#ifdef URI_TESTS
+
 int main(int argc, char **argv) 
 {
 
@@ -62,8 +65,8 @@ int main(int argc, char **argv)
 		vector<string> tests;
 		tests.push_back("http://www.slashdot.org");
 		tests.push_back("http://www.embratel.net.br:80/Embratel02/cda/portal/0,2297,RE_P_371,00.html");
-		tests.push_back("http://www.embratel.net.br:80/joão.html");
-		tests.push_back("http://www.embratel.net.br:80/superjoão! .html");
+		tests.push_back("http://www.embratel.net.br:80/joï¿½o.html");
+		tests.push_back("http://www.embratel.net.br:80/superjoï¿½o! .html");
 		while(1) {
 			signed char c = getopt(argc, argv, "hd:");
 			if(c == -1) break;
@@ -117,3 +120,5 @@ int main(int argc, char **argv)
 	}
 	exit(0);
 }
+
+#endif

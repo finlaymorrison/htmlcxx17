@@ -24,6 +24,7 @@
 #define __HTMLCXX__URI_H__
 
 #include <string>
+#include <cstring>
 #include <climits>
 #include <stdexcept>
 

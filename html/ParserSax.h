@@ -48,9 +48,9 @@ namespace htmlcxx
 				// the parsing
 				virtual void beginParsing() {}
 
-				virtual void foundTag(Node node, bool isEnd) {}
-				virtual void foundText(Node node) {}
-				virtual void foundComment(Node node) {}
+				virtual void foundTag(Node /*node*/, bool /*isEnd*/) {}
+				virtual void foundText(Node /*node*/) {}
+				virtual void foundComment(Node /*node*/) {}
 
 				virtual void endParsing() {}
 
