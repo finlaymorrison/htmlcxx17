@@ -126,7 +126,7 @@ Node::operator string() const {
 	return this->text();
 }
 
-ostream &Node::operator<<(ostream &stream) const {
-	stream << (string)(*this);
+ostream &operator<<(ostream &stream, const Node &node) {
+	stream << (string)(node);
 	return stream;
 }

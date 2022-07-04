@@ -73,7 +73,6 @@ namespace htmlcxx {
 				}
 
 				operator std::string() const;
-				std::ostream &operator<<(std::ostream &stream) const;
 
 				const std::map<std::string, std::string>& attributes() const { return this->mAttributes; }
 				void parseAttributes();
@@ -91,6 +90,8 @@ namespace htmlcxx {
 				bool mIsHtmlTag;
 				bool mComment;
 		};
+
+		std::ostream &operator<<(std::ostream &stream, const Node &node);
 	}
 }
 

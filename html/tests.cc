@@ -69,7 +69,6 @@ class HtmlTest {
 		HTML::ParserDom parser;
 		parser.parse(html);
 		tr = parser.getTree();
-		cerr << tr << endl;
 		cerr << " ok" << endl;
 		return true;
 	}
