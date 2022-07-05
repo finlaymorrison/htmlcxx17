@@ -60,7 +60,7 @@ inline void dummyprintf(const char *format, ...)
 #endif
 #endif
 
-#ifdef DEBUG
+#ifdef EN_DEBUG_HTMLCXX
 #if defined(WIN32) && !defined(__MINGW32__)
 #define DEBUGP debugprintf
 #else

@@ -122,11 +122,33 @@ bool Node::operator==(const Node &n) const
 }
 
 Node::operator string() const {
-	if (isTag()) return this->tagName();
-	return this->text();
+	if (isTag())
+	{
+		string s = "<" + tagName();
+		for (map<string, string>::const_iterator it = attributes().begin(); it != attributes().end(); ++it)
+		{
+			s += " " + it->first + "=\"" + it->second + "\"";
+		}
+		s += ">";
+		return s;
+	}
+	else if (isComment())
+	{
+		return "<!--" + text() + "-->";
+	}
+	else
+	{
+		return text();
+	}
 }
 
-ostream &operator<<(ostream &stream, const Node &node) {
-	stream << (string)(node);
-	return stream;
+namespace htmlcxx
+{
+	namespace HTML
+	{
+		std::ostream &operator<<(std::ostream &stream, const Node &node)
+		{
+			return stream << (string)(node);
+		}
+	}
 }
