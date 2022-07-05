@@ -142,13 +142,7 @@ Node::operator string() const {
 	}
 }
 
-namespace htmlcxx
+std::ostream &operator<<(std::ostream &stream, const htmlcxx::HTML::Node &node)
 {
-	namespace HTML
-	{
-		std::ostream &operator<<(std::ostream &stream, const Node &node)
-		{
-			return stream << (string)(node);
-		}
-	}
+	return stream << (string)(node);
 }

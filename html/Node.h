@@ -90,9 +90,9 @@ namespace htmlcxx {
 				bool mIsHtmlTag;
 				bool mComment;
 		};
-
-		std::ostream &operator<<(std::ostream &stream, const Node &node);
 	}
 }
+
+std::ostream &operator<<(std::ostream &stream, const htmlcxx::HTML::Node &node);
 
 #endif
